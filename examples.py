@@ -60,6 +60,3 @@ car.honk()
 class Dog:
     def bark(self):
         print("Гав")
-
-
-

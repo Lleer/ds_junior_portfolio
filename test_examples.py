@@ -38,4 +38,3 @@ def test_dog_bark(capsys):
     dog.bark()
     captured = capsys.readouterr()
     assert "Гав" in captured.out
-
