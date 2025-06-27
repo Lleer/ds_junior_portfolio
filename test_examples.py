@@ -43,14 +43,18 @@ def test_dog_bark(capsys):
 def test_flatten_simple():
     assert flatten([1, 2, 3]) == [1, 2, 3]
 
+
 def test_flatten_nested():
     assert flatten([1, [2, 3], [4, [5, 6]], 7]) == [1, 2, 3, 4, 5, 6, 7]
+
 
 def test_flatten_deep():
     assert flatten([[1], [[2, [3]]]]) == [1, 2, 3]
 
+
 def test_flatten_empty():
     assert flatten([]) == []
+
 
 def test_flatten_mixed():
     assert flatten([[], [1, [2]], 3]) == [1, 2, 3]

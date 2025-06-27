@@ -61,10 +61,11 @@ class Dog:
     def bark(self):
         print("Гав")
 
-def flatten (lst):
+
+def flatten(lst):
     result = []
     for elem in lst:
-        if isinstance (elem, list):
+        if isinstance(elem, list):
             result.extend(flatten(elem))
         else:
             result.append(elem)
