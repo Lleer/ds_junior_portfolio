@@ -1,4 +1,4 @@
-from examples import Account, Car, Person, Dog
+from examples import Account, Car, Person, Dog, flatten
 
 
 def test_account_deposit():
@@ -38,3 +38,19 @@ def test_dog_bark(capsys):
     dog.bark()
     captured = capsys.readouterr()
     assert "Гав" in captured.out
+
+
+def test_flatten_simple():
+    assert flatten([1, 2, 3]) == [1, 2, 3]
+
+def test_flatten_nested():
+    assert flatten([1, [2, 3], [4, [5, 6]], 7]) == [1, 2, 3, 4, 5, 6, 7]
+
+def test_flatten_deep():
+    assert flatten([[1], [[2, [3]]]]) == [1, 2, 3]
+
+def test_flatten_empty():
+    assert flatten([]) == []
+
+def test_flatten_mixed():
+    assert flatten([[], [1, [2]], 3]) == [1, 2, 3]
