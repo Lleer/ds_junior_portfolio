@@ -6,6 +6,7 @@ class Person:
     def introduce(self):
         print(f"My name is {self.name}, I am {self.age}")
 
+
 person_1 = Person("Alex", 25)
 person_2 = Person("Bob", 20)
 
@@ -31,24 +32,27 @@ class Account:
     def get_balance(self):
         return self._balance
 
-wallet = Account ("Bob", 100)
-wallet.deposit (100)
-wallet.withdraw (20)
-print (wallet.get_balance ())
+
+wallet = Account("Bob", 100)
+wallet.deposit(100)
+wallet.withdraw(20)
+print(wallet.get_balance())
 
 
-class Vehicle :
+class Vehicle:
     def __init__(self, model):
         self.model = model
-        
-    def info (self):
-        print (f"{self.model}")
-        
-class Car (Vehicle):
-    def honk (self):
-        print (f"{self.model} гудит")
 
-car = Car ("Kia")
+    def info(self):
+        print(f"{self.model}")
+
+
+class Car(Vehicle):
+    def honk(self):
+        print(f"{self.model} гудит")
+
+
+car = Car("Kia")
 car.info()
 car.honk()
 
