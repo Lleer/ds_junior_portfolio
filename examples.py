@@ -51,3 +51,8 @@ class Car (Vehicle):
 car = Car ("Kia")
 car.info()
 car.honk()
+
+
+class Dog:
+    def bark(self):
+        print("Гав")
