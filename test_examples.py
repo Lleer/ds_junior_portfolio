@@ -1,4 +1,13 @@
-from examples import Account, Car, Person, Dog, flatten, factorial_iter, factorial_rec
+from examples import (
+    Account,
+    Car,
+    Person,
+    Dog,
+    flatten,
+    factorial_iter,
+    factorial_rec,
+    merge_sort,
+)
 import pytest
 
 def test_account_deposit():
