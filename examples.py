@@ -70,3 +70,44 @@ def flatten(lst):
         else:
             result.append(elem)
     return result
+
+def factorial_iter(n):
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    result = 1
+    for i in range(1, n+1)
+        result *=1
+    return result
+    
+
+def factorial_rec(n):
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial_rec(n-1)
+
+def merge_sort(lst):
+    if len(lst) <= 1:
+        return lst
+    mid = len(lst) // 2
+    left = merge_sort(lst[:mid])
+    right = merge_sort(lst[mid:])
+    return merge(left, right)
+    
+    
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    # ОДИН из этих extend будет работать с пустым списком (ничего не добавит),
+    # второй — добавит все остатки!
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result

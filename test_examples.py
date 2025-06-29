@@ -1,5 +1,5 @@
-from examples import Account, Car, Person, Dog, flatten
-
+from examples import Account, Car, Person, Dog, flatten, factorial_iter, factorial_rec
+import pytest
 
 def test_account_deposit():
     acc = Account("Test", 100)
@@ -58,3 +58,45 @@ def test_flatten_empty():
 
 def test_flatten_mixed():
     assert flatten([[], [1, [2]], 3]) == [1, 2, 3]
+
+
+def test_factorial_zero():
+    assert factorial_iter(0) == 1
+    assert factorial_rec(0) == 1
+
+
+def test_factorial_one():
+    assert factorial_iter(1) == 1
+    assert factorial_rec(1) == 1
+
+
+def test_factorial_general():
+    assert factorial_iter(5) == 120
+    assert factorial_rec(5) == 120
+
+
+def test_factorial_negative():
+    with pytest.raises(ValueError):
+        factorial_iter(-1)
+    with pytest.raises(ValueError):
+        factorial_rec(-1)
+
+
+def test_merge_sort_basic():
+    assert merge_sort([5, 3, 8, 1]) == [1, 3, 5, 8]
+
+
+def test_merge_sort_sorted():
+    assert merge_sort([1, 2, 3, 4]) == [1, 2, 3, 4]
+
+
+def test_merge_sort_reverse():
+    assert merge_sort([4, 3, 2, 1]) == [1, 2, 3, 4]
+
+
+def test_merge_sort_duplicates():
+    assert merge_sort([2, 1, 2, 3]) == [1, 2, 2, 3]
+
+
+def test_merge_sort_empty():
+    assert merge_sort([]) == []
