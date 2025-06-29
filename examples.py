@@ -71,6 +71,7 @@ def flatten(lst):
             result.append(elem)
     return result
 
+
 def factorial_iter(n):
     if n < 0:
         raise ValueError("n must be non-negative")
@@ -78,7 +79,7 @@ def factorial_iter(n):
     for i in range(1, n+1):
         result *=1
     return result
-    
+
 
 def factorial_rec(n):
     if n < 0:
@@ -87,6 +88,7 @@ def factorial_rec(n):
         return 1
     return n * factorial_rec(n-1)
 
+
 def merge_sort(lst):
     if len(lst) <= 1:
         return lst
@@ -94,8 +96,8 @@ def merge_sort(lst):
     left = merge_sort(lst[:mid])
     right = merge_sort(lst[mid:])
     return merge(left, right)
-    
-    
+
+
 def merge(left, right):
     result = []
     i = j = 0
