@@ -10,6 +10,7 @@ from examples import (
 )
 import pytest
 
+
 def test_account_deposit():
     acc = Account("Test", 100)
     acc.deposit(50)
